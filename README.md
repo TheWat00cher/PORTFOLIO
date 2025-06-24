@@ -25,5 +25,4 @@ Welcome to my personal developer portfolio website! This is a fully custom-built
 
 🔗 [Live Site](https://thewat00cher.github.io/PORTFOLIO/)
 
-## 🧩 Folder Structure
 
