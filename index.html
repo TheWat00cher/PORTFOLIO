@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      <h1>Hi, I'm <span>Bhawesh Jha</span></h1>
+      <p>Software Engineer | Web Developer | Problem Solver</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </header>
+  <!-- ABOUT ME SECTION -->
+  <section class="about" id="about">
+    <div class="container about-container">
+      <img src="2.jpg" alt="Your Photo" class="profile-pic" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate Software Engineer with a knack for building clean, user-friendly web apps.
+          From front-end interfaces to back-end logic, I enjoy turning complex problems into elegant
+          solutions. Currently looking for new opportunities to grow and make an impact.
+        </p>
+        <a href="bhawesh.pdf" class="btn" target="_blank">Download Resume</a>
+      </div>
+    </div>
+  </section>
+<!-- SKILLS SECTION -->
+<section class="skills" id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card" data-logo="html5">HTML5</div>
+      <div class="skill-card" data-logo="css3">CSS3</div>
+      <div class="skill-card" data-logo="javascript">JavaScript</div>
+      <div class="skill-card" data-logo="react">React</div>
+      <div class="skill-card" data-logo="nodejs">Node.js</div>
+      <div class="skill-card" data-logo="mongodb">MongoDB</div>
+      <div class="skill-card" data-logo="python">Python</div>
+      <div class="skill-card" data-logo="java">Java</div>
+      <div class="skill-card" data-logo="mysql">MySql</div>
+    </div>
+  </div>
+</section>
+<!-- PROJECTS SECTION -->
+<section class="projects" id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="p1.png" alt="Project 1">
+        <div class="project-info">
+          <h3>TravellersHub</h3>
+          <p>A full Airbnb clone with search, filters, and booking system. Built using HTML, CSS, and JavaScript.</p>
+          <!-- <a href="#" class="btn">Live Demo</a> -->
+          <a href="https://github.com/TheWat00cher/travellershub" class="btn secondary">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="1199.jpg" alt="Project 2">
+        <div class="project-info">
+          <h3>Wedding Planner</h3>
+          <p>A modern wedding photography booking site built with HTML, CSS, and JavaScript — clean UI, responsive design, and perfect for showcasing photographers.</p>
+          <a href="https://thewat00cher.github.io/Photographer/" class="btn">Live Demo</a>
+          <a href="https://github.com/TheWat00cher" class="btn secondary">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Exprence SECTION -->
+<section id="experience" class="experience-section">
+  <h2>Experience</h2>
+
+  <div class="experience-card">
+    <h3>Web Development Certification</h3>
+    <p class="company">Apna College • Completed 2024</p>
+    <ul>
+      <li>Completed full-stack course covering HTML, CSS, JS, and backend basics.</li>
+      <li>Built multiple responsive websites and mini-projects.</li>
+      <li>Earned a certificate for course completion.</li>
+    </ul>
+    <button id="downloadCertBtn" class="download-btn">Download Certificate ⬇️</button>
+  </div>
+
+  <div class="experience-card">
+    <h3>MERN Stack Training (Ongoing)</h3>
+    <p class="company">Vector Institute • 2025 – Present</p>
+    <ul>
+      <li>Learning MongoDB, Express, React, and Node.js in depth.</li>
+      <li>Working on real-world projects and team-based tasks.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>If you’d like to work together, have a question, or just want to say hi — drop a message below!</p>
+    
+   <form class="contact-form" action="https://formspree.io/f/xyzjdygl" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+      
+      <!-- Fix: relative path for thank-you redirect -->
+      <input type="hidden" name="_next" value="thank-you.html">
+    </form>
+    <br>
+    <div class="contact-links">
+      <div class="email-section">
+        <a href="mailto:kumarbhaweshjha169@gmail.com">kumarbhaweshjha169@gmail.com</a>
+      </div>
+      <div class="links-section">
+        <a href="https://github.com/TheWat00cher" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/bhawesh-jha-826215217/" target="_blank">LinkedIn</a>
+        <a href="https://www.hackerrank.com/profile/kumarbhaweshjha1" target="_blank">HackerRank</a>
+        <!-- <a href="https://leetcode.com/" target="_blank">LeetCode</a>
+        <a href="https://codeforces.com/" target="_blank">Codeforces</a> -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2025 Bhawesh Jha. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
