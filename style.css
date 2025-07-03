@@ -583,3 +583,105 @@ img {
   transform: scale(1.05);
 }
 
+/* =========================
+    Responsive Tweaks
+========================= */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .experience-section h2,
+  .projects h2,
+  .skills h2,
+  .contact h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Phones and below */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+
+  .dark-toggle-btn {
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .btn.secondary {
+    font-size: 0.9rem;
+  }
+
+  .experience-card {
+    padding: 1.2rem;
+  }
+
+  .links-section {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .links-section a {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .email-section a {
+    font-size: 1.1rem;
+  }
+}
+
+
