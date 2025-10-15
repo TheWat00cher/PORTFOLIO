@@ -12,6 +12,8 @@ body {
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  word-wrap: break-word;
 }
 h1, h2, h3 {
   font-weight: 600;
@@ -31,9 +33,109 @@ img {
 }
 
 /* =========================
+    Navigation Bar
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 32, 39, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffff;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #00cccc;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu li a:hover {
+  color: #00ffff;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ffff;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    flex-direction: column;
+    background: rgba(15, 32, 39, 0.98);
+    width: 70%;
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+
+/* =========================
     Hero Section
 ========================= */
 .hero {
+  min-height: 100vh;
   height: 100vh;
   background: 
     linear-gradient(to right, rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.75), rgba(44, 83, 100, 0.65)),
@@ -46,6 +148,15 @@ img {
   text-align: center;
   color: #fff;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    height: auto;
+    padding: 4rem 1rem;
+    background-attachment: scroll;
+  }
 }
 .hero h1 {
   font-size: 3.5rem;
@@ -219,6 +330,212 @@ img {
 }
 .skill-card[data-logo="mysql"]::before {
   background-image: url('mysql.png');
+}
+
+
+/* =========================
+    Internship Section
+========================= */
+.internship {
+  position: relative;
+  background: 
+    linear-gradient(135deg, rgba(15, 32, 39, 0.92), rgba(32, 58, 67, 0.88), rgba(44, 83, 100, 0.85)),
+    url('internship.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 6rem 0;
+  color: #fff;
+}
+
+.internship-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.internship h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.internship-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.internship-badge {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.badge-status {
+  display: inline-block;
+  background: linear-gradient(135deg, #00ffff, #00cccc);
+  color: #0f2027;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5);
+  }
+}
+
+.internship-content h3 {
+  font-size: 2rem;
+  color: #00ffff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.company-name {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.internship-details {
+  text-align: left;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.responsibilities,
+.skills-gained {
+  margin-bottom: 2rem;
+}
+
+.responsibilities h4,
+.skills-gained h4 {
+  font-size: 1.4rem;
+  color: #00ffff;
+  margin-bottom: 1rem;
+  border-left: 4px solid #00ffff;
+  padding-left: 1rem;
+}
+
+.responsibilities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.responsibilities ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.7;
+  color: #e8e8e8;
+}
+
+.responsibilities ul li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #00ffff;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.responsibilities ul li strong {
+  color: #00ffff;
+  font-weight: 600;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.tech-tag:hover {
+  background: rgba(0, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+/* Responsive Internship */
+@media (max-width: 768px) {
+  .internship {
+    padding: 4rem 0;
+    background-attachment: scroll;
+  }
+
+  .internship h2 {
+    font-size: 2rem;
+  }
+
+  .internship-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .internship-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .responsibilities h4,
+  .skills-gained h4 {
+    font-size: 1.2rem;
+  }
+
+  .tech-tags {
+    gap: 0.6rem;
+  }
+
+  .tech-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 
@@ -514,50 +831,174 @@ img {
   color: #eee;
 }
 .dark-mode .hero,
-.dark-mode .footer,
+.dark-mode .footer {
+  background-color: #0a0a0a;
+  color: #eee;
+}
 .dark-mode .projects,
-.dark-mode .skills,
-.dark-mode .contact,
 .dark-mode .about {
-  background-color: #111;
+  background-color: #1a1a1a;
+  color: #eee;
+}
+.dark-mode .skills,
+.dark-mode .contact {
+  background: linear-gradient(to right, #1a1a1a, #2a2a2a);
   color: #eee;
 }
 .dark-mode .project-card,
-.dark-mode .skill-card {
-  background-color: #222;
+.dark-mode .skill-card,
+.dark-mode .experience-card {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  background-color: #2a2a2a;
   color: #eee;
+  border: 1px solid #444;
+}
+.dark-mode .contact-form input::placeholder,
+.dark-mode .contact-form textarea::placeholder {
+  color: #999;
+}
+.dark-mode .contact-links {
+  background-color: #2a2a2a;
+}
+.dark-mode .email-section a {
+  color: #00ffff;
 }
 .dark-mode .btn,
 .dark-mode .btn.secondary {
-  background-color: #eee;
+  background-color: #00ffff;
   color: #111;
 }
 .dark-mode .btn.secondary {
-  border-color: #eee;
+  border-color: #00ffff;
 }
 .dark-mode .btn.secondary:hover {
   background-color: #00cccc;
   color: #111;
 }
 .dark-mode .experience-section {
-  background-color: #2c3e50;
+  background: linear-gradient(to right, #1a1a1a, #2a2a2a);
 }
 
-.dark-mode .contact h2 {
-    color: black; /* Use accent color for visibility */
+/* Text colors in dark mode */
+.dark-mode .contact h2,
+.dark-mode .contact p,
+.dark-mode .projects h2,
+.dark-mode .skills h2,
+.dark-mode .experience-section h2,
+.dark-mode .about h2 {
+  color: #fff;
 }
-.dark-mode .contact p {
-    color: black; /* Pure white for strong contrast */
+
+.dark-mode .project-info h3 {
+  color: #00ffff;
 }
-.dark-mode .projects h2 {
-    color: white; /* Use accent color for visibility */
+
+.dark-mode .project-info p {
+  color: #ccc;
 }
-.dark-mode .projects h3 {
-    color: white; /* Use accent color for visibility */
+
+.dark-mode .experience-card h3 {
+  color: #00ffff;
 }
-.dark-mode .experience-section h2 {
-    color: white; /* Use accent color for visibility */
+
+.dark-mode .experience-card .company {
+  color: #999;
 }
+
+.dark-mode .experience-card ul li {
+  color: #ddd;
+}
+
+.dark-mode .skill-card {
+  color: #fff;
+}
+
+.dark-mode .about-text h2 {
+  color: #fff;
+}
+
+.dark-mode .about-text p {
+  color: #ddd;
+}
+
+.dark-mode .links-section a {
+  background-color: #00ffff;
+  color: #111;
+}
+
+.dark-mode .links-section a:hover {
+  background-color: #00cccc;
+  color: #111;
+}
+
+.dark-mode .download-btn {
+  background-color: #00ffff;
+  color: #111;
+}
+
+.dark-mode .download-btn:hover {
+  background-color: #00cccc;
+}
+
+/* Dark mode for Internship section */
+.dark-mode .internship {
+  background: 
+    linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(20, 20, 20, 0.92), rgba(30, 30, 30, 0.90)),
+    url('internship.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.dark-mode .internship h2 {
+  color: #fff;
+}
+
+.dark-mode .internship-content {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.dark-mode .internship-content h3 {
+  color: #00ffff;
+}
+
+.dark-mode .company-name {
+  color: #ccc;
+}
+
+.dark-mode .intro-text {
+  color: #ddd;
+}
+
+.dark-mode .responsibilities h4,
+.dark-mode .skills-gained h4 {
+  color: #00ffff;
+}
+
+.dark-mode .responsibilities ul li {
+  color: #ddd;
+}
+
+.dark-mode .tech-tag {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.dark-mode .tech-tag:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .dark-mode .internship {
+    background-attachment: scroll;
+  }
+}
+
 
 
 .dark-toggle-btn {
@@ -608,6 +1049,28 @@ img {
   .contact h2 {
     font-size: 2rem;
   }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Medium phones */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .project-info {
+    padding: 1.5rem;
+  }
+  
+  .project-info .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
 }
 
 /* Phones and below */
@@ -618,6 +1081,7 @@ img {
 
   .hero h1 {
     font-size: 2rem;
+    line-height: 1.2;
   }
 
   .hero p {
@@ -633,7 +1097,7 @@ img {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   }
 
   .projects-grid {
@@ -654,6 +1118,7 @@ img {
     right: 10px;
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
+    z-index: 1001;
   }
 
   .btn {
@@ -681,6 +1146,16 @@ img {
 
   .email-section a {
     font-size: 1.1rem;
+    word-break: break-word;
+  }
+  
+  /* Better spacing on mobile */
+  .about,
+  .skills,
+  .projects,
+  .experience-section,
+  .contact {
+    padding: 3rem 0;
   }
 }
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
+  <title>Bhawesh Jha | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -21,7 +21,7 @@
   <!-- ABOUT ME SECTION -->
   <section class="about" id="about">
     <div class="container about-container">
-      <img src="2.jpg" alt="Your Photo" class="profile-pic" />
+      <img src="2.jpg" alt="Bhawesh Jha" class="profile-pic" />
       <div class="about-text">
         <h2>About Me</h2>
         <p>
@@ -50,6 +50,57 @@
     </div>
   </div>
 </section>
+
+<!-- INTERNSHIP SECTION -->
+<section class="internship" id="internship">
+  <div class="internship-overlay">
+    <div class="container">
+      <h2>Internship</h2>
+      <div class="internship-content">
+        <div class="internship-badge">
+          <span class="badge-status">Currently Working</span>
+        </div>
+        <h3>Bluetooth Developer Intern</h3>
+        <p class="company-name">HARMAN International</p>
+        
+        <div class="internship-details">
+          <p class="intro-text">
+            As a Bluetooth Developer Intern, I am actively contributing to cutting-edge wireless technology development 
+            and gaining hands-on experience in embedded systems and IoT solutions.
+          </p>
+          
+          <div class="responsibilities">
+            <h4>Key Responsibilities & Achievements:</h4>
+            <ul>
+              <li><strong>Unit Testing (UT):</strong> Writing comprehensive unit tests for Bluetooth source code to ensure reliability and performance of wireless communication protocols.</li>
+              <li><strong>Hardware Integration:</strong> Working extensively with various Bluetooth hardware modules, chipsets, and development boards for testing and validation.</li>
+              <li><strong>Code Development:</strong> Contributing to the development and optimization of Bluetooth connectivity features and protocols.</li>
+              <li><strong>Debugging & Troubleshooting:</strong> Identifying and resolving issues in Bluetooth stack implementation and hardware-software integration.</li>
+              <li><strong>Technical Documentation:</strong> Creating detailed test reports, documentation, and technical specifications for Bluetooth modules.</li>
+              <li><strong>Cross-functional Collaboration:</strong> Working closely with senior engineers, hardware teams, and product developers to deliver robust solutions.</li>
+            </ul>
+          </div>
+
+          <div class="skills-gained">
+            <h4>Technologies & Skills Gained:</h4>
+            <div class="tech-tags">
+              <!-- <span class="tech-tag">Bluetooth Low Energy (BLE)</span> -->
+              <span class="tech-tag">Bluetooth Classic</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Unit Testing</span>
+              <!-- <span class="tech-tag">Embedded Systems</span>  
+              <span class="tech-tag">IoT Development</span> -->
+              <span class="tech-tag">Hardware Testing</span>
+              <span class="tech-tag">Protocol Analysis</span>
+              <span class="tech-tag">Version Control (Git)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS SECTION -->
 <section class="projects" id="projects">
   <div class="container">
@@ -78,10 +129,21 @@
         </div>
       </div>
 
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="Designer.png" alt="Social Media Clone">
+        <div class="project-info">
+          <h3>Social-Media-Clone</h3>
+          <p>A full-featured social media platform clone with user profiles, posts, likes, and comments. Built with modern web technologies for an interactive user experience.</p>
+          <a href="https://social-media-clone-c90ghqjip-bhawesh-jhas-projects.vercel.app/" class="btn">Live Demo</a>
+          <a href="https://github.com/TheWat00cher/Social-Media-Clone" class="btn secondary">GitHub</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-<!-- Exprence SECTION -->
+<!-- Experience SECTION -->
 <section id="experience" class="experience-section">
   <h2>Experience</h2>
 
@@ -97,12 +159,14 @@
   </div>
 
   <div class="experience-card">
-    <h3>MERN Stack Training (Ongoing)</h3>
-    <p class="company">Vector Institute • 2025 – Present</p>
+    <h3>MERN Stack Training</h3>
+    <p class="company">Vector Institute • Completed 2025</p>
     <ul>
-      <li>Learning MongoDB, Express, React, and Node.js in depth.</li>
-      <li>Working on real-world projects and team-based tasks.</li>
+      <li>Completed in-depth training on MongoDB, Express, React, and Node.js.</li>
+      <li>Worked on real-world projects and team-based tasks.</li>
+      <li>Earned a certificate for course completion.</li>
     </ul>
+    <button id="downloadVectorCertBtn" class="download-btn">Download Certificate ⬇️</button>
   </div>
 </section>
 
@@ -118,8 +182,8 @@
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit" class="btn">Send Message</button>
       
-      <!-- Fix: relative path for thank-you redirect -->
-      <input type="hidden" name="_next" value="thank-you.html">
+      <!-- Absolute URL for thank-you redirect -->
+      <input type="hidden" name="_next" value="https://thewat00cher.github.io/PORTFOLIO/thank-you.html">
     </form>
     <br>
     <div class="contact-links">
